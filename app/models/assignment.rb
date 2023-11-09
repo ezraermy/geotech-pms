@@ -5,7 +5,7 @@ class Assignment < ApplicationRecord
   # Validations
   validates_presence_of :start_date, :due_date, :status
   validate :start_date_cannot_be_in_the_past
-  validate :due_date_must_be_after_reservation_date
+  validate :due_date_must_be_after_start_date
 
   private
 
