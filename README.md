@@ -26,7 +26,7 @@
 
 # 📖 geotech-pms <a name="about-project"></a>
 
-**geotech-pms** Implement a connection between a Ruby on Rails back-end and React front-end using webpack.
+**geotech-pms** A Project Management System built with Ruby on Rails, PostgreSQL, RESTful API and ReacJS. Streamline geotechnical projects with project tracking, collaboration, and data management.
 
 ## 🛠 Built With <a name="built-with"></a>
 
