@@ -85,14 +85,6 @@ To run linters tests, run the following command:
   rubocop
 ```
 
-### Run the app
-
-Then run the following command:
-
-```bash
-    rails s
-```
-
 <p align="right"><a href="#readme-top">👆</a></p>
 
 <!-- AUTHORS -->
