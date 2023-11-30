@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   namespace :api do
       resources :assignments
+      resources :projects
     end
-    resources :projects
 end
