@@ -3,8 +3,10 @@ class Api::AssignmentsController < ApplicationController
 
   # HTTP GET request to retrieve a list of reservations.
   def index
-    assignments = User.find_by(id: params[:user_id]).assignments.includes(:project)
-    if assignments
+    user = User.find_by(id: params[:user_id])
+
+    if user
+      assignments = user.assignments.includes(:project)
       assignments_json = assignments.map do |assignment|
         {
           id: assignment.id,
@@ -13,22 +15,13 @@ class Api::AssignmentsController < ApplicationController
           date: assignment.date
         }
       end
+
       render json: assignments_json, status: :ok
     else
-      render json: { message: 'No assignments found' }, status: :not_found
+      render json: { message: 'User not found' }, status: :not_found
     end
   end
-
-  def create
-    user = User.find_by(id: params[:user_id])
-    assignment = user.assignments.build(assignment_params)
-    if assignment.save
-      render json: assignment, status: :created
-    else
-      render json: { errors: assignment.errors.full_messages }, status: :unprocessable_entity
-    end
-  end
-
+  
   def show
     if @assignment
       render json:
